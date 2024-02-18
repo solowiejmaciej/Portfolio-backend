@@ -142,6 +142,20 @@ func mapToResponse(projects []models.GithubProjects) []responses.ProjectsRespons
 				Images:       []string{"https://i.imgur.com/9JWkqB7.jpeg", "https://i.imgur.com/0jDzREd.png"},
 				Tags:         []string{"#hardware", "#iot"},
 			}
+		case 759441947:
+			res = responses.ProjectsResponse{
+				Id:           project.Id,
+				Title:        project.Name,
+				Description:  "This is a simple API that integrates with github, it is a part of my portfolio website. It is responsible for fetching my projects from github, and displaying them on my website. It is based on Go, and uses mux to handle requests.",
+				GitHubUrl:    project.HtmlUrl,
+				CreatedAt:    formattedDate,
+				Icon:         "Default",
+				IsLive:       project.Homepage != "",
+				LiveUrl:      project.Homepage,
+				Technologies: project.Topics,
+				Images:       []string{""},
+				Tags:         []string{"#backend", "#api"},
+			}
 		default:
 			res = responses.ProjectsResponse{
 				Id:           project.Id,
